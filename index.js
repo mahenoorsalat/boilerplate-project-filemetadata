@@ -6,7 +6,8 @@ require('dotenv').config()
 
 
 var app = express();
-var upload = multer({ dest: 'uploads/' });
+const storage = multer.memoryStorage()
+var upload = multer({storage : storage })
 var port = process.env.PORT || 3000;
 
 app.use(cors());
